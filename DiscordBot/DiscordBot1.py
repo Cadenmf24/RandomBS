@@ -65,6 +65,6 @@ async def joke(ctx):
 
 
 #yes
-
+#yes again
 
 prefix.run('ODQ0NzU4Mjc4NjA5MTc0NTI5.YKXEdA.gfCAHdHxDBYotPmB5XP9i-pQ6ck')
