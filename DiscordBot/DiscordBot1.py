@@ -64,8 +64,7 @@ async def joke(ctx):
 
 
 
-#yes
-#yes again
+
 key=open("DiscordBot/key.txt")
 txt=key.read()
 prefix.run(txt)
