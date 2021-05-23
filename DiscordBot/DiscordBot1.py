@@ -40,9 +40,11 @@ async def advice(ctx):
     obj = json.loads(str(unga))
     await ctx.send(str(obj["slip"]["advice"]))
 
+@prefix.command()
+async def purge(ctx, amount=5):
+    await ctx.channel.purge(limit=amount)
 
 
-    
 
 @prefix.command()
 async def joke(ctx):
