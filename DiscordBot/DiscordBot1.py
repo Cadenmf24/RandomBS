@@ -1,4 +1,6 @@
+import discord
 from discord import message
+from discord import activity
 from discord.ext import commands
 from discord.ext.commands.errors import CommandNotFound
 from discord.message import Message
@@ -11,15 +13,23 @@ prefix=commands.Bot(command_prefix="^")
 reg = r"^[iI]'?a?[mM] "
 
 
-
 @prefix.event
 async def on_ready():
     print('Ready!')
+    await prefix.change_presence(status=discord.Status.online,activity=discord.CustomActivity("HighRise's Manager"))
+
+
+
+
 
 @prefix.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.send("Oh no! Something went wrong! Use ^Help for correct spelling")
+
+
+
+
 
 @prefix.event
 async def on_message(message):
