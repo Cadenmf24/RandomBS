@@ -16,7 +16,8 @@ reg = r"^[iI]'?a?[mM] "
 @prefix.event
 async def on_ready():
     print('Ready!')
-    await prefix.change_presence(status=discord.Status.online,activity=discord.CustomActivity("HighRise's Manager"))
+    await prefix.change_presence(activity=discord.Game("HighRise's Manager"))
+
 
 
 
@@ -50,9 +51,16 @@ async def advice(ctx):
     obj = json.loads(str(unga))
     await ctx.send(str(obj["slip"]["advice"]))
 
+
+
+
 @prefix.command()
-async def purge(ctx, amount=5):
+async def purge(ctx,*args):
+    amount=int(args[0])
     await ctx.channel.purge(limit=amount)
+
+
+
 
 
 
